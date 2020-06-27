@@ -27,7 +27,7 @@ $ python scripts/prepro_labels.py --input_json data/dataset_coco.json --output_j
 
 `prepro_labels.py` will map all words that occur <= 5 times to a special `UNK` token, and create a vocabulary for all the remaining words. The image information and vocabulary are dumped into `data.json` and discretized caption data are dumped into `data_label.h5`.
 
-### Download COCO dataset (Used for evaluation as VSE++ requires raw images)
+### Download COCO dataset
 
 Download the coco images from [link](http://mscoco.org/dataset/#download). We need 2014 training images and 2014 val. images. You should put the `train2014/` and `val2014/` in the same directory, denoted as `$IMAGE_ROOT`.
 
@@ -64,7 +64,7 @@ Download visual paraphrase pairs h5 file (in folder `visual_paraphrase_pairs/`),
 
 We also provide preprocessed captions used for the paper.
 
-Folder `self_retrieval_model/` contains the cross-modal retrieval model used for IR scoring function.
+Folder `self_retrieval_model/` contains the cross-modal retrieval model used for IR scoring function to construct visual paraphrase pairs. See  [DiscCaptioning](https://https://github.com/ruotianluo/DiscCaptioning) project for training the model.
 
 We provide model checkpoints of *DCVP(Tdiv, 0.1)*, *DCVP(Tdiv, 0.3)* and *DCVP(IR, 2)*, and model output json results on Karpathy test set.
 
