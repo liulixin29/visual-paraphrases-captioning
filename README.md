@@ -8,7 +8,9 @@ Our code is based on Ruotian Luo's implementation of [Self-critical Sequence Tra
 
 ## Requirements
 Python 2.7 (because there is no [coco-caption](https://github.com/tylin/coco-caption) version for python 3)
+
 PyTorch 0.4 (along with torchvision, it seems to be OK with other versions like PyTorch 1.0)
+
 coco-caption, PIL, h5py
 
 ## Train your own network on COCO
@@ -82,7 +84,7 @@ To resume training, you can specify `--start_from` option to be the path saving 
 
 If you have tensorflow, the loss histories are automatically dumped into `--checkpoint_path`, and can be visualized using tensorboard.
 
-If you'd like to evaluate BLEU/CIDEr/SPICE scores during training in addition to validation cross entropy loss, use `--language_eval 1` option, but don't forget to download the [coco-caption code](https://github.com/tylin/coco-caption) into `coco-caption` directory.
+If you'd like to evaluate BLEU/CIDEr/SPICE scores during training in addition to validation cross entropy loss, use `--language_eval 1` option, but don't forget to download the [coco-caption code](https://github.com/tylin/coco-caption) into the directory.
 
 For more options, see `opts.py`. Please refer to [self-critical.pytorch](https://github.com/ruotianluo/self-critical.pytorch) repo for more details.
 
@@ -126,4 +128,4 @@ year = {2019}
 
 ## Acknowledgements
 
-Thanks Ruotian Luo for his [self-critical.pytorch](https://github.com/ruotianluo/self-critical.pytorch) and [DiscCap](https://https://github.com/ruotianluo/DiscCaptioning) repositories.
+Thanks Ruotian Luo for his [self-critical.pytorch](https://github.com/ruotianluo/self-critical.pytorch) and [DiscCaptioning](https://https://github.com/ruotianluo/DiscCaptioning) repositories.
