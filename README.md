@@ -8,7 +8,9 @@ Our code is based on Ruotian Luo's implementation of [Self-critical Sequence Tra
 
 ## Requirements
 Python 2.7 (because there is no [coco-caption](https://github.com/tylin/coco-caption) version for python 3)
+
 PyTorch 0.4 (along with torchvision, it seems to be OK with other versions like PyTorch 1.0)
+
 coco-caption, PIL, h5py
 
 ## Train your own network on COCO
@@ -25,7 +27,7 @@ $ python scripts/prepro_labels.py --input_json data/dataset_coco.json --output_j
 
 `prepro_labels.py` will map all words that occur <= 5 times to a special `UNK` token, and create a vocabulary for all the remaining words. The image information and vocabulary are dumped into `data.json` and discretized caption data are dumped into `data_label.h5`.
 
-### Download COCO dataset (Used for evaluation as VSE++ requires raw images)
+### Download COCO dataset
 
 Download the coco images from [link](http://mscoco.org/dataset/#download). We need 2014 training images and 2014 val. images. You should put the `train2014/` and `val2014/` in the same directory, denoted as `$IMAGE_ROOT`.
 
@@ -62,7 +64,7 @@ Download visual paraphrase pairs h5 file (in folder `visual_paraphrase_pairs/`),
 
 We also provide preprocessed captions used for the paper.
 
-Folder `self_retrieval_model/` contains the cross-modal retrieval model used for IR scoring function.
+Folder `self_retrieval_model/` contains the cross-modal retrieval model used for IR scoring function to construct visual paraphrase pairs. See  [DiscCaptioning](https://https://github.com/ruotianluo/DiscCaptioning) project for training the model.
 
 We provide model checkpoints of *DCVP(Tdiv, 0.1)*, *DCVP(Tdiv, 0.3)* and *DCVP(IR, 2)*, and model output json results on Karpathy test set.
 
@@ -82,7 +84,7 @@ To resume training, you can specify `--start_from` option to be the path saving 
 
 If you have tensorflow, the loss histories are automatically dumped into `--checkpoint_path`, and can be visualized using tensorboard.
 
-If you'd like to evaluate BLEU/CIDEr/SPICE scores during training in addition to validation cross entropy loss, use `--language_eval 1` option, but don't forget to download the [coco-caption code](https://github.com/tylin/coco-caption) into `coco-caption` directory.
+If you'd like to evaluate BLEU/CIDEr/SPICE scores during training in addition to validation cross entropy loss, use `--language_eval 1` option, but don't forget to download the [coco-caption code](https://github.com/tylin/coco-caption) into the directory.
 
 For more options, see `opts.py`. Please refer to [self-critical.pytorch](https://github.com/ruotianluo/self-critical.pytorch) repo for more details.
 
@@ -126,4 +128,4 @@ year = {2019}
 
 ## Acknowledgements
 
-Thanks Ruotian Luo for his [self-critical.pytorch](https://github.com/ruotianluo/self-critical.pytorch) and [DiscCap](https://https://github.com/ruotianluo/DiscCaptioning) repositories.
+Thanks Ruotian Luo for his [self-critical.pytorch](https://github.com/ruotianluo/self-critical.pytorch) and [DiscCaptioning](https://https://github.com/ruotianluo/DiscCaptioning) repositories.
